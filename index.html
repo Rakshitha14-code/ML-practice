@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Happy Birthday ❤️</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<section class="page active" id="page1">
+  <h1 class="pov">POV : It's his birthday 💖</h1>
+  <button onclick="nextPage()">Start 🎉</button>
+  <div class="hearts"></div>
+</section>
+
+<section class="page" id="page2">
+  <div class="card">
+    <h2>Hey Love! 💕</h2>
+    <p>I wanted to do something special for you, so I made something special just for you...</p>
+    <p style="color: #d81b60;"> click below to see what it is! ❤️✨,</p>
+    <button style="color: white;" onclick="nextPage()">Open My Heart 💌</button>
+  </div>
+</section>
+
+<section class="page" id="page3">
+    <h2>A Love Letter ❤️</h2>
+    <div class="envelope-wrapper" id="envelopeWrapper" onclick="openLetter()">
+        <div class="envelope-box">
+            <img src="images/envelope.jpeg" class="envelope-img" alt="Envelope">
+            <p class="click-hint">Click to open the envelope 💌</p>
+        </div>
+    </div>
+    
+    <div id="letter" class="letter-content" style="display: none;">
+        <p>
+            My sweetest love,<br><br>
+            Every moment with you feels magical. 
+            You are my happiness, my peace, my forever.<br><br>
+            With all my heart ❤️
+        </p>
+        <button class="next-btn" onclick="nextPage()">Continue 🤍</button>
+    </div>
+</section>
+
+<section class="page" id="page4">
+  <h2>Some Special Memories 📸</h2>
+  <div class="cards-section">
+    <h3>Some Special Cards For You</h3>
+    <p class="subtitle">Click each card to reveal a special message!</p>
+    
+    <div class="grid" id="photoGrid">
+      <div class="photo-box" onclick="flipCard(this)">
+        <div class="photo-box-inner">
+          <div class="photo-front"><img src="./images/photo1.jpeg" alt="Photo1"></div>
+          <div class="photo-back"><p>You're my favorite kind of memory! ❤️</p></div>
+        </div>
+      </div>
+      <div class="photo-box" onclick="flipCard(this)">
+        <div class="photo-box-inner">
+          <div class="photo-front"><img src="./images/photo2.jpeg" alt="Photo2"></div>
+          <div class="photo-back"><p>Every moment with you is a gift. 🎁</p></div>
+        </div>
+      </div>
+      <div class="photo-box" onclick="flipCard(this)">
+        <div class="photo-box-inner">
+          <div class="photo-front"><img src="./images/photo3.jpeg" alt="Photo3"></div>
+          <div class="photo-back"><p>To the moon and back, I love you! 🌙</p></div>
+        </div>
+      </div>
+      <div class="photo-box" onclick="flipCard(this)">
+        <div class="photo-box-inner">
+          <div class="photo-front"><img src="./images/photo4.jpeg" alt="Photo4"></div>
+          <div class="photo-back"><p>Forever yours, in every universe. ✨</p></div>
+        </div>
+      </div>
+    </div>
+    
+    <p id="counterText">0 of 4 messages discovered! Keep exploring!</p>
+    <button onclick="showUnlockedModal()" class="final-surprise-btn">Final Surprise 🎁</button>
+  </div>
+</section>
+
+<section class="page" id="page5">
+    <div id="loveLetterMessage" class="card">
+        <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 15px;">
+            <span style="background: #e91e63; color: white; padding: 5px 10px; border-radius: 50%;">📩</span>
+            <h2 style="color: #333; margin: 0; font-size: 1.2rem;">Final Love Letter</h2>
+        </div>
+        
+        <p style="color: #d81b60; font-weight: bold; margin-bottom: 10px;">My sweetest darling,</p>
+        <div style="color: #444; line-height: 1.6; font-style: italic;">
+            <p>You're the calm I reach for and the laugh that brightens my day.</p>
+            <p style="color: #00796b;">I hope this tiny world made you smile — and whispered how much you mean to me.</p>
+            <p>I'll keep making memories, big and small, always with you.</p>
+        </div>
+        <p style="color: #666; font-size: 0.9rem; margin-top: 15px;">Forever yours, in every little universe. ✨</p>
+
+        <div style="margin-top: 25px; display: flex; gap: 10px; justify-content: flex-end;">
+            <button onclick="showFinalCard()" style="background:#ff4d88; color:white; border-radius:20px; padding:10px 15px; border:none; cursor:pointer;">Seal this Letter 💌</button>
+            <button onclick="location.reload()" style="background:#4db6ac; color:white; border-radius:20px; padding:10px 15px; border:none; cursor:pointer;">Restart</button>
+        </div>
+    </div>
+</section>
+
+<section class="page" id="page6">
+    <div id="finalCard" class="card">
+        <div class="heart-icon">💝</div>
+        <h1>Letter Sealed with Love</h1>
+        <p>I Love You Always</p>
+        <div class="hearts-row">♡ ♡ ♡ ♡ ♡ ♡ ♡</div>
+        <p><strong>Always Yours 💕</strong></p>
+        <div class="button-group-horizontal">
+            <button class="btn-again" onclick="location.reload()">Experience Again ✨</button>
+            <button class="btn-kiss" onclick="sendLove()">send a Virtual kiss 💋💋</button>
+        </div>
+    </div>
+</section>
+
+<div id="unlockedModal" class="modal" style="display: none; position: fixed; z-index: 100; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.5);">
+  <div class="modal-content" style="background-color: white; margin: 15% auto; padding: 30px; border-radius: 20px; width: 300px; text-align: center;">
+    <h2 style="color: #d81b60;">All Messages Unlocked! 🎉</h2>
+    <p>Each message is a piece of my heart. ✨</p>
+    <button onclick="closeModalAndGo()" style="background:#ff4d88; color:white; border-radius:20px; padding:12px 25px; border:none; cursor:pointer; font-weight:bold;">Open the Final Letter ✉️</button>
+  </div>
+</div>
+
+<script src="script.js"></script>
+<script>
+// Internal helpers to fix logic
+function openLetter() {
+    document.getElementById('envelopeWrapper').style.display = 'none';
+    document.getElementById('letter').style.display = 'block';
+}
+
+function showUnlockedModal() {
+    document.getElementById('unlockedModal').style.display = 'block';
+}
+
+function closeModalAndGo() {
+    document.getElementById('unlockedModal').style.display = 'none';
+    nextPage();
+}
+
+function showFinalCard() {
+    nextPage();
+}
+
+function flipCard(card) {
+    card.classList.toggle('active');
+}
+</script>
+
+</body>
+</html>

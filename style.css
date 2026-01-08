@@ -1,0 +1,820 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@500&display=swap');
+
+body, p {
+  font-family: 'Quicksand', cursive !important;
+}
+
+h1, h2, h3, .pov {
+  font-family: 'Pacifico', cursive ! important;
+}
+
+
+/* Headings ki mathrame vere font kavalante */
+h1, h2, h3, .pov {
+  font-family: 'Pacifico', cursive;
+  letter-spacing: 1px;
+}
+
+/* Body ki idhi add cheyyi */
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Vertical center */
+  align-items: center;     /* Horizontal center */
+  margin: 0;
+  overflow-x: hidden;
+}
+
+/* Page class ki idhi add cheyyi */
+.page {
+  display: none;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.page.active {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* .page.active {
+  display: flex; /* Block nundi Flex ki marchali centering kosam */
+ */
+
+
+button {
+    background-color: #ff4d88 !important; /* Proper Pink Color */
+    color: #e91e63(255, 255, 255) !important;
+    padding: 15px 35px !important;
+    font-size: 22px !important;
+    border-radius: 50px !important;
+    border: none !important;
+    box-shadow: 0 5px 15px rgba(255, 77, 136, 0.4) !important;
+    cursor: pointer !important;
+    display: block !important;
+    margin: 20px auto !important;
+    transition: 0.3s !important;
+}
+
+button:hover {
+    background-color: #e91e63 !important; /* Hover chesthe inka dark pink */
+    transform: scale(1.05) !important;
+}
+/* button {
+  padding: 15px 30px;
+  background: hotpink;
+  border: none;
+  color: white;
+  border-radius: 20px;
+  font-size: 22px;
+  cursor: pointer;
+  margin-top: 20px;
+} */
+
+.pov {
+  font-size: 32px;
+  margin-top: 150px;
+  color: #ff4d88;
+}
+
+.card {
+  background: #fff6cc;
+  padding: 25px;
+  border-radius: 20px;
+  width: 80%;
+  max-width: 320px;
+  margin: 20px auto;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+}
+
+.envelope-wrapper {
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.envelope {
+    position: relative;
+    width: 300px;
+    height: 200px;
+    background: #f8adbe; /* Pinkish background */
+    transition: transform 0.5s ease;
+}
+
+.letter {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    height: 0; /* Modal starts hidden */
+    background: white;
+    overflow: hidden;
+    transition: all 0.8s ease-in-out;
+    padding: 0 10px;
+    box-shadow: 0 -5px 15px rgba(0,0,0,0.1);
+    z-index: -1;
+}
+
+/* Letter open ainappudu vache style */
+.envelope.open .letter {
+    height: 250px;
+    bottom: 100px;
+    z-index: 2;
+    padding: 20px;
+}
+
+/* .envelope {
+  width: 200px;
+  cursor: pointer;
+} */
+
+#letter {
+  display: none;
+  background: #fff;
+  padding: 20px;
+  border-radius: 15px;
+  margin-top: 20px;
+}
+
+/* Envelope image size ni control cheyadaniki */
+.envelope {
+    width: 250px; /* Size ni ikkada thaggisthunnam */
+    height: auto;
+    max-height: 250px;
+    
+    cursor: pointer;
+    z-index: 10;
+    transition: transform 0.3s ease;
+    display: block;
+    margin: 0 auto 20px auto; /* Image center ki ravadaniki */
+}
+
+/* Page motham screen lo fit avvadaniki */
+#page3 {
+    min-height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* Prathi page screen size lo perfect ga undali */
+.page {
+    display: none; /* Starting lo anni hide chestham */
+    width: 100%;
+    min-height: 100vh;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    top: 0;
+    left: 0;
+    overflow-x: hidden;
+}
+
+.envelope-img {
+    width: 250px; /* Thagginchanu */
+    height: auto;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+#page3, #page5, #page6 {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* Active page mathrame display avvali */
+.page.active {
+    display: flex !important;
+}
+
+/* Page 3 Envelope Image size thagginchadam */
+#page3 .envelope {
+    width: 200px; /* Video lo image chala peddaga undi, idi correct size */
+    height: auto;
+    max-width: 80%;
+    margin-top: 20px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+/* Letter content overlap avvakunda */
+#letter {
+    display: none;
+    margin-top: 20px;
+    z-index: 5;
+}
+
+/* Mothon section center cheyadaniki */
+.cards-section {
+  width: 100%;
+  max-width: 800px; /* Space perugutundi side-by-side raavadaniki */
+  margin: 0 auto;
+  text-align: center;
+  padding: 20px;
+}
+
+/* Modern Heading Style */
+.cards-section h3 {
+  color: #ff4d88;
+  font-size: 1.8rem;
+  margin-bottom: 5px;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+.subtitle {
+  color: #666;
+  margin-bottom: 30px;
+  font-size: 0.9rem;
+}
+
+/* 2x2 Grid - Pakka pakkana ravali ante idi chala important */
+.grid {
+  display: flex;         /* Grid kante Flexbox side-by-side ki inka easy */
+  flex-wrap: wrap;       /* Space saripoka pothe kinda ki vellela */
+  justify-content: center; /* Anni cards center lo untayi */
+  gap: 60px;            /*  horizontal Cards madhya gap */
+  margin-top: 50px auto;
+  margin-bottom: 50px;
+}
+
+/* 3. Card Size control - Deenni change cheyakandi */
+.photo-box {
+  width: 150px;         /* Size ippudu side by side ki perfect ga untundi */
+  height: 150px;
+  perspective: 1000px;
+}
+
+/* 4. Modern Border & Shadow (Optional) */
+.photo-front img, .photo-back {
+  border-radius: 15px;  /* Modern rounded corners */
+  box-shadow: 0 8px 15px rgba(0,0,0,0.1); /* Light shadow for depth */
+}
+
+/* 5. Flip logic (Mee code lo unnadhe, emi marchoddu) */
+.photo-box-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.photo-box.active .photo-box-inner {
+  transform: rotateY(180deg);
+}
+
+/* Modern Card Design */
+.photo-box {
+  width: 150px;
+  height: 150px;
+  perspective: 1000px;
+  cursor: pointer;
+}
+
+.photo-box-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  border-radius: 20px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1); /* Soft Shadow */
+}
+
+/* Flip Effect */
+.photo-box.active .photo-box-inner {
+  transform: rotateY(180deg);
+}
+
+/* Front & Back Modern Look */
+.photo-front, .photo-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 5px solid #fff; /* White border like polaroid */
+}
+
+/* CSS lo ekkadaina add cheyandi */
+.photo-box:hover .photo-box-inner {
+  transform: translateY(-10px) scale(1.05); /* 👈 Card paiki lechi konchem peddadi avtundi */
+  box-shadow: 0 25px 50px rgba(255, 77, 136, 0.3); /* 👈 Pinkish glow shadow vastundi */
+}
+
+
+.photo-front img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.photo-back {
+  background: linear-gradient(135deg, #fff 0%, #ffe4ed 100%);
+  color: #ff4d88;
+  transform: rotateY(180deg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-align: center;
+  line-height: 1.4;
+}
+
+/* Counter Text Style */
+#counterText {
+  margin-top: 60px;
+  font-weight: bold;
+  color: #ff4d88;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 8px 20px;
+  border-radius: 30px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+@media (max-width: 480px) {
+  .photo-box {
+    width: 140px; /* Mobile lo konchem size taggisthe rendu cards pakka pakkana padathayi */
+    height: 140px;
+  }
+  .grid {
+    gap: 10px;
+  }
+}
+
+
+.heart {
+  position: fixed;
+  bottom: 0;
+  font-size: 24px;
+  animation: floatUp 4s linear forwards;
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100vh);
+    opacity: 0;
+  }
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(100vh);
+  }
+}
+
+
+  button {
+    font-size: 18px;
+    padding: 12px 24px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .card {
+    width: 90%;
+  }
+
+  .envelope {
+    width: 150px;
+  }
+
+
+.float-emoji {
+  position: fixed;
+  bottom: -20px;
+  font-size: 26px;
+  animation: floatUp 5s linear forwards;
+  pointer-events: none;
+}
+
+@keyframes floatUp {
+  from {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(-120vh);
+    opacity: 0;
+  }
+}
+
+.balloon {
+  position: fixed;
+  bottom: -50px;
+  font-size: 30px;
+  animation: balloonUp 6s ease-in forwards;
+}
+
+@keyframes balloonUp {
+  to {
+    transform: translateY(-120vh) translateX(50px);
+    opacity: 0;
+  }
+}
+
+.firework {
+  position: fixed;
+  width: 6px;
+  height: 6px;
+  background: transparent;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.firework span {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: gold;
+  border-radius: 50%;
+  animation: explode 1s ease-out forwards;
+}
+
+@keyframes explode {
+  from {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+  to {
+    transform: translate(var(--x), var(--y));
+    opacity: 0;
+  }
+}
+
+
+/* Pop-up Background (Full Screen) */
+.modal {
+  display: none; /* Initial ga hidden */
+  position: fixed;
+  z-index: 9999; /* Cards kante paiki ravali */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6); /* Background dim chestundi */
+  backdrop-filter: blur(8px); /* Modern blur effect */
+  align-items: center;
+  justify-content: center;
+}
+
+/* Modal Content Box */
+.modal-content {
+  background-color: #fff9f0; /* Light cream color */
+  padding: 30px;
+  border-radius: 20px;
+  width: 85%;
+  max-width: 400px;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+/* Buttons in Modal */
+.modal-content button {
+  padding: 10px 20px;
+  margin: 10px;
+  border-radius: 25px;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.button-group {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 20px;
+}
+.seal-btn { background-color: #ff4d88; color: white; } /* */
+.restart-btn { background-color: #4CAF50; color: white; } /* */
+
+.letter-style {
+  background: #fff9f0; /* Creamy paper look */
+  border: 1px solid #f0e4d7;
+  line-height: 1.6;
+  font-family: 'Georgia', serif; /* Elegant font style */
+  color: #444;
+}
+
+.message-body {
+  text-align: left; /* Message left side nundi modal lo neat ga untundi */
+  padding: 10px;
+  font-style: italic;
+  max-height: 300px;
+  overflow-y: auto; /* Message peddadi ayithe scroll cheyochu */
+}
+
+.message-body p {
+  margin-bottom: 15px;
+}
+
+/* Final Surprise Button ni center cheyadaniki */
+.final-surprise-btn {
+  display: block;      /* Button oka line ni motham occupy chestundi */
+  margin: 40px auto;   /* 'auto' valla button center ki vasthundi, 40px paina/kinda space isthundi */
+  padding: 12px 25px;
+  border-radius: 30px;
+  background: #ff4d88;
+  color: white;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(255, 77, 136, 0.3);
+}
+
+.cards-section {
+  display: flex;
+  flex-direction: column; /* Anni okati kinda okati ravali */
+  align-items: center;    /* 👈 Deenivalla button sarriga center ki vastundi */
+  width: 100%;
+  text-align: center;
+}
+
+/* Emojis paiki velle animation */
+.floating-love {
+    position: fixed;
+    bottom: -50px;
+    font-size: 2rem;
+    pointer-events: none;
+    z-index: 999;
+    animation: floatUp 3s linear forwards;
+}
+
+@keyframes floatUp {
+    0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+    100% { transform: translateY(-110vh) rotate(20deg); opacity: 0; }
+}
+
+
+/* Stylish Font Import */
+@import url('https://fonts.googleapis.com/css2?family=Satisfy&family=Quicksand:wght@500&display=swap');
+
+* {
+  font-family: 'Quicksand', cursive !important;
+}
+
+h1, h2, h3, .pov, h2[style*="color: #d81b60"] {
+  font-family: 'Satisfy', cursive !important;
+  font-size: 2rem !important;
+}
+
+/* Common Button Style */
+button {
+  border: none !important;
+  border-radius: 25px !important;
+  padding: 12px 25px !important;
+  font-size: 1.1rem !important;
+  font-weight: bold !important;
+  cursor: pointer !important;
+  transition: 0.3s !important;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1) !important;
+}
+
+/* Pink Button (Experience Again / Final Surprise) */
+button, .final-surprise-btn, .btn-again, .seal-btn {
+  background-color: #d81b60 !important; /* Screenshot 2 Pink color */
+  color: white !important;
+}
+
+/* Green Button (Send a Virtual Kiss / Restart) */
+.btn-kiss, .restart-btn {
+  background-color: #6fb98f !important; /* Screenshot 2 Green color */
+  color: white !important;
+}
+
+/* Center and Layout Fix */
+body {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  min-height: 100vh !important;
+  margin: 0 !important;
+}
+
+.page.active {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+/* Yellow Card Size Fix */
+.card, .modal-content {
+  width: 85% !important;
+  max-width: 320px !important;
+  background: #fff9e6 !important; /* Soft Creamy Yellow */
+  margin: 20px auto !important;
+  padding: 30px !important;
+}
+
+
+/* Final Page Buttons Alignment */
+#finalCard .buttons {
+    display: flex !important;
+    justify-content: center !important;
+    gap: 15px !important; /* Buttons madhya gap */
+    margin-top: 20px !important;
+}
+
+/* Button Colors (Screenshot lo unna style) */
+.btn-again {
+    background-color: #d81b60 !important; /* Screenshot Dark Pink */
+    color: white !important;
+}
+
+.btn-kiss {
+    background-color: #4db6ac !important; /* Screenshot Teal/Green */
+    color: white !important;
+}
+
+#finalCard {
+    background: #fff9e6 !important; /* Soft Creamy Color */
+    border-radius: 20px !important;
+    padding: 30px !important;
+    width: 85% !important;
+    max-width: 350px !important;
+    margin: auto !important;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1) !important;
+    text-align: center !important;
+}
+
+#finalCard h1 {
+    font-family: 'Satisfy', cursive !important;
+    color: #d81b60 !important;
+    font-size: 1.8rem !important;
+}
+
+/* Step 1 button visibility fix */
+#step1 {
+    display: none; /* Default ga hide chestundi */
+}
+
+/* Page 4 active unnappude kanipisthundi */
+#page4.active ~ #step1 {
+    display: block !important;
+    text-align: center;
+}
+
+/* Final Card Buttons side-by-side */
+.buttons {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: center !important;
+    gap: 15px !important;
+}
+
+/* Screenshot 2 colors */
+.btn-again { background-color: #d81b60 !important; color: white !important; }
+.btn-kiss { background-color: #4db6ac !important; color: white !important; }
+
+
+/* Restart button color green ga marchadaniki */
+button:contains("Restart"), 
+.restart-button, 
+button:last-of-type {
+    background-color: #28a745 !important; /* Green color */
+    color: white !important;              /* Text color white */
+    border: none;
+}
+
+/* Seal this letter button pink ga unchadaniki (Specific ga mention chesthunnanu) */
+button:first-of-type,
+.seal-button {
+    background-color: #e94d58 !important; /* Mee current Pink/Red color */
+    color: white !important;
+}
+
+/* Buttons ni row lo pettadaniki */
+.final-buttons-container {
+    display: flex;
+    gap: 10px;           /* Buttons madhya gap */
+    justify-content: center;
+    margin-top: 20px;
+    flex-wrap: wrap;     /* Mobile lo adjust avvadaniki */
+}
+
+/* Experience Again Button (Pink) */
+.btn-again {
+    background-color: #ff4d88;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* Send a Virtual Kiss Button (Greenish/Teal) */
+.btn-kiss {
+    background-color: #4db6ac; /* Meeru adigina Green color */
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.btn-again:hover, .btn-kiss:hover {
+    opacity: 0.9;
+    transform: scale(1.05);
+}
+
+/* Final Page Buttons Wrapper */
+.button-group-horizontal {
+    display: flex !important;       /* Side by side ravadaniki */
+    flex-direction: row !important; /* Row lo pettadaniki */
+    justify-content: center;        /* Center ki ravadaniki */
+    gap: 10px;                     /* Buttons madhya space */
+    margin-top: 20px;
+    flex-wrap: nowrap;
+    
+}
+
+/* Experience Again Button */
+.btn-again {
+    background-color: #ff4d88; /* Pink color */
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: bold;
+    min-width: 140px;
+}
+
+/* Send a Virtual Kiss Button */
+.btn-kiss {
+    background-color: #4db6ac; /* Greenish color */
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: bold;
+    min-width: 140px;
+    transition: all 0.3s ease;
+}
+
+/* Kiss Emoji Animation */
+.kiss-emoji {
+    position: fixed;
+    bottom: -10px;
+    z-index: 1000;
+    pointer-events: none;
+    animation: floatUp linear forwards;
+}
+
+@keyframes floatUp {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* Buttons side-by-side ravadaniki fix */
+.final-buttons-container {
+    display: flex !important;
+    flex-direction: row !important; /* Pakkana pakkane unchuthundi */
+    justify-content: center;
+    gap: 15px;
+    margin-top: 25px;
+}
