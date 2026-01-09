@@ -16,45 +16,52 @@ function nextPage() {
 }
 
 function nextPage() {
-    const currentActivePage = document.querySelector('.page.active');
-    if (currentActivePage) {
-        const nextTargetPage = currentActivePage.nextElementSibling;
-        
-        // Oka vela tharvatha page unte, dhani active chestham
-        if (nextTargetPage && nextTargetPage.classList.contains('page')) {
-            currentActivePage.classList.remove('active');
-            nextTargetPage.classList.add('active');
-        }
+    const activePage = document.querySelector('.page.active');
+    const nextStep = activePage.nextElementSibling;
+
+    if (nextStep && nextStep.classList.contains('page')) {
+        activePage.classList.remove('active');
+        nextStep.classList.add('active');
     }
 }
+
+function musicPlay() {
+    var audio = document.getElementById("birthdaySong");
+    audio.volume = 0.5; // 0.5 ante 50% volume. Meeku full volume kavali ante idi pettakandi.
+    audio.play();
+}
+
+// function nextPage() {
+//     const currentActivePage = document.querySelector('.page.active');
+//     if (currentActivePage) {
+//         const nextTargetPage = currentActivePage.nextElementSibling;
+        
+//         // Oka vela tharvatha page unte, dhani active chestham
+//         if (nextTargetPage && nextTargetPage.classList.contains('page')) {
+//             currentActivePage.classList.remove('active');
+//             nextTargetPage.classList.add('active');
+//         }
+//     }
+// }
 
 // Letter open chese logic
+
 function openLetter() {
-    const letter = document.getElementById("letter");
-    const envelope = document.querySelector(".envelope");
-    
-    if (letter) {
-        letter.style.display = "block";
-        envelope.style.display = "none"; // Envelope hide chesthe overlap avvadhu
-    }
+    document.getElementById('envelopeWrapper').style.display = 'none';
+    document.getElementById('letter').style.display = 'flex'; // 'block' badulu 'flex' pettandi
+    document.getElementById('letter').style.flexDirection = 'column';
+    document.getElementById('letter').style.alignItems = 'center';
 }
 // function openLetter() {
-//   const letter = document.getElementById("letter");
-//   const envelopeImg = document.querySelector(".envelope");
-//   // Letter ni chupinchi, image ni hide chestham
-//   letter.style.display = "block";
-//   envelopeImg.style.display = "none"; 
-// }
+//     const letter = document.getElementById("letter");
+//     const envelope = document.querySelector(".envelope");
     
-
-// function openLetter() {
-//     document.querySelector('.envelope').classList.toggle('open');
+//     if (letter) {
+//         letter.style.display = "block";
+//         envelope.style.display = "none"; // Envelope hide chesthe overlap avvadhu
+//     }
 // }
 
-// // 💌 OPEN LETTER (THIS WAS MISSING)
-// function openLetter() {
-//   document.getElementById("letter").style.display = "block";
-// }
 
 // 📸 PHOTO FLIP
 function toggleMsg(box) {

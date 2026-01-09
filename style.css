@@ -44,16 +44,12 @@ body {
   min-height: 100vh;
 }
 
-/* .page.active {
-  display: flex; /* Block nundi Flex ki marchali centering kosam */
- */
-
 
 button {
     background-color: #ff4d88 !important; /* Proper Pink Color */
     color: #e91e63(255, 255, 255) !important;
     padding: 15px 35px !important;
-    font-size: 22px !important;
+    font-size: 1.4rem !important;
     border-radius: 50px !important;
     border: none !important;
     box-shadow: 0 5px 15px rgba(255, 77, 136, 0.4) !important;
@@ -65,23 +61,16 @@ button {
 
 button:hover {
     background-color: #e91e63 !important; /* Hover chesthe inka dark pink */
-    transform: scale(1.05) !important;
+    transform: scale(1.1) !important;
 }
-/* button {
-  padding: 15px 30px;
-  background: hotpink;
-  border: none;
-  color: white;
-  border-radius: 20px;
-  font-size: 22px;
-  cursor: pointer;
-  margin-top: 20px;
-} */
+
 
 .pov {
   font-size: 32px;
   margin-top: 150px;
   color: #ff4d88;
+  
+  
 }
 
 .card {
@@ -98,9 +87,11 @@ button:hover {
     position: relative;
     cursor: pointer;
     display: flex;
+    
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: auto !important;
+    margin-top: 20px;
 }
 
 .envelope {
@@ -157,7 +148,7 @@ button:hover {
     z-index: 10;
     transition: transform 0.3s ease;
     display: block;
-    margin: 0 auto 20px auto; /* Image center ki ravadaniki */
+    margin: 0 auto 5px auto; /* Image center ki ravadaniki */
 }
 
 /* Page motham screen lo fit avvadaniki */
@@ -168,7 +159,9 @@ button:hover {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+
+    justify-content: flex-start !important;
+    padding-top: 50px !important;
 }
 
 
@@ -190,8 +183,17 @@ button:hover {
 .envelope-img {
     width: 250px; /* Thagginchanu */
     height: auto;
+    display: block;
+    margin: 0 auto;
     border-radius: 10px;
     cursor: pointer;
+}
+
+/* Subtitle (Click to open...) style */
+.click-hint {
+    margin-top: 10px !important; /* Image ki subtitle ki madhya gap */
+    font-size: 0.9rem;
+    color: #666;
 }
 
 #page3, #page5, #page6 {
@@ -253,8 +255,8 @@ button:hover {
   flex-wrap: wrap;       /* Space saripoka pothe kinda ki vellela */
   justify-content: center; /* Anni cards center lo untayi */
   gap: 60px;            /*  horizontal Cards madhya gap */
-  margin-top: 50px auto;
-  margin-bottom: 50px;
+  margin-top: 10px auto;
+  margin-bottom: 30px;
 }
 
 /* 3. Card Size control - Deenni change cheyakandi */
@@ -346,7 +348,7 @@ button:hover {
 
 /* Counter Text Style */
 #counterText {
-  margin-top: 60px;
+  margin-top: 20px;
   font-weight: bold;
   color: #ff4d88;
   background: rgba(255, 255, 255, 0.8);
@@ -364,6 +366,11 @@ button:hover {
     gap: 10px;
   }
 }
+
+/* Subtitle daggara gap thaggadaniki idhi add cheyandi */
+#page4 h2 { margin-bottom: 5px !important; }
+.cards-section h3 { margin-top: 0 !important; margin-bottom: 5px !important; }
+.subtitle { margin-top: 0 !important; margin-bottom: 10px !important; }
 
 
 .heart {
